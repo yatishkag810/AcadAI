@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcadAI — MITS Gwalior Academic & College Information Assistant</title>
+  <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside id="app-sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <span class="logo-text">AcadAI</span>
+        </div>
+        <button id="collapse-sidebar-btn" class="btn btn-icon-only collapse-btn" aria-label="Collapse Sidebar" title="Collapse / Expand Sidebar">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <button class="nav-item active" data-tab="dashboard">
+              <i class="fas fa-chart-line"></i>
+              <span>Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="planner">
+              <i class="fas fa-tasks"></i>
+              <span>Academic Planner</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="copilot">
+              <i class="fas fa-brain"></i>
+              <span>Study Copilot</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="explain">
+              <i class="fas fa-compass"></i>
+              <span>College Guide</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="chatbot">
+              <i class="fas fa-robot"></i>
+              <span>AI Assistant</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="courses">
+              <i class="fas fa-book"></i>
+              <span>Course Finder</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="admission">
+              <i class="fas fa-calculator"></i>
+              <span>Admission</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="timetable">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Timetable</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="attendance">
+              <i class="fas fa-chart-pie"></i>
+              <span>Attendance</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="map">
+              <i class="fas fa-map-marked-alt"></i>
+              <span>Campus Map</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="calendar">
+              <i class="fas fa-calendar-day"></i>
+              <span>Academic Calendar</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="facilities">
+              <i class="fas fa-building"></i>
+              <span>Campus Facilities</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="faq">
+              <i class="fas fa-question-circle"></i>
+              <span>Student FAQ</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="kb">
+              <i class="fas fa-database"></i>
+              <span>Knowledge Base</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item" data-tab="settings">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Yatish Kag</span>
+            <span class="user-role">B.Tech IT Sem 5 (MITS Gwalior)</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="main-content">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button id="mobile-menu-btn" class="btn btn-icon-only mobile-toggle" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 id="page-header-title">Academic Dashboard</h1>
+        </div>
+        <div class="header-right">
+          <button id="theme-toggle-btn" class="btn btn-icon-only theme-toggle" title="Toggle Light/Dark Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <div class="divider"></div>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-label">NLP Local Engine Active</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Panels -->
+      <main class="tab-container">
+        
+        <!-- Tab: Dashboard -->
+        <section id="dashboard-tab" class="tab-content-panel active">
+          <!-- Student Profile Hero Card -->
+          <div class="student-profile-hero-card">
+            <div class="profile-main-info">
+              <div class="student-avatar-badge">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="student-details">
+                <h3 id="dash-profile-name">Yatish Kag</h3>
+                <div class="student-meta-row">
+                  <div class="student-meta-item"><i class="fas fa-id-card"></i> <span id="dash-profile-roll">BTIT24O1153</span></div>
+                  <div class="student-meta-item"><i class="fas fa-laptop-code"></i> <span id="dash-profile-branch">IT</span></div>
+                  <div class="student-meta-item"><i class="fas fa-layer-group"></i> <span id="dash-profile-sem">Sem 5 (Sec A)</span></div>
+                  <div class="student-meta-item"><i class="fas fa-university"></i> <span>MITS Gwalior</span></div>
+                  <div class="student-meta-item"><i class="fas fa-award"></i> CGPA: <strong id="dash-profile-cgpa">8.42</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="student-profile-actions">
+              <div id="dash-profile-status-chip" class="status-chip-safe">
+                <i class="fas fa-shield-alt"></i> Attendance Status: Safe (85.2%)
+              </div>
+              <button id="edit-profile-btn" class="btn btn-secondary btn-small" title="Edit your student details">
+                <i class="fas fa-user-edit"></i> Edit Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats Counters -->
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon icon-blue"><i class="fas fa-chart-line"></i></div>
+              <div class="stat-data">
+                <h3 id="stat-avg-attendance">0%</h3>
+                <span>Average Attendance</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon icon-pink"><i class="fas fa-exclamation-triangle"></i></div>
+              <div class="stat-data">
+                <h3 id="stat-low-attendance">0</h3>
+                <span>Subjects Below Target</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon icon-purple"><i class="fas fa-book-open"></i></div>
+              <div class="stat-data">
+                <h3 id="stat-total-courses">0</h3>
+                <span>Active B.Tech Courses</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon icon-orange"><i class="fas fa-calendar-check"></i></div>
+              <div class="stat-data">
+                <h3 id="stat-upcoming-events">0</h3>
+                <span>Upcoming Events</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid: Academic Day Overview & Quick Actions -->
+          <div class="dashboard-grid">
+            <!-- Left Column: Today's Schedule & Deadlines -->
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <!-- Today's Schedule Card -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header" style="display:flex; justify-content:space-between; align-items:center;">
+                  <h4><i class="fas fa-calendar-day text-indigo"></i> Today's Class Schedule</h4>
+                  <button class="btn btn-secondary btn-small" onclick="window.App.switchTab('timetable')">Full Timetable</button>
+                </div>
+                <div id="dashboard-today-lectures" class="today-schedule-list">
+                  <!-- Rendered dynamically by app.js -->
+                </div>
+              </div>
+
+              <!-- Upcoming Tasks & Deadlines -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header" style="display:flex; justify-content:space-between; align-items:center;">
+                  <h4><i class="fas fa-tasks text-purple"></i> Academic Deadlines & Tasks</h4>
+                  <button class="btn btn-secondary btn-small" onclick="window.App.switchTab('planner')">View Planner</button>
+                </div>
+                <div id="dashboard-planner-deadlines" class="today-schedule-list">
+                  <!-- Rendered dynamically by app.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Services & Notices -->
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <!-- Quick Access Services -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-bolt text-indigo"></i> Quick Access Services</h4>
+                </div>
+                <div class="quick-actions-list">
+                  <button id="action-ask" class="action-btn">
+                    <span class="action-icon icon-btn-blue"><i class="fas fa-robot"></i></span>
+                    <div class="action-desc">
+                      <h5>Ask AcadAI Assistant</h5>
+                      <p>Instant answers on fees, hostel, courses, and rules.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                  <button id="action-planner" class="action-btn">
+                    <span class="action-icon icon-btn-orange"><i class="fas fa-tasks"></i></span>
+                    <div class="action-desc">
+                      <h5>Academic Planner</h5>
+                      <p>Track assignments, projects, quizzes, and exam countdowns.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                  <button id="action-copilot" class="action-btn">
+                    <span class="action-icon icon-btn-purple"><i class="fas fa-brain"></i></span>
+                    <div class="action-desc">
+                      <h5>Study Copilot</h5>
+                      <p>Generate goal-based daily study roadmaps for exams.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                  <button id="action-explain" class="action-btn">
+                    <span class="action-icon icon-btn-teal"><i class="fas fa-compass"></i></span>
+                    <div class="action-desc">
+                      <h5>Explain My College</h5>
+                      <p>Grading equations, condonation rules, and SGPA tool.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                  <button id="action-attendance" class="action-btn">
+                    <span class="action-icon icon-btn-green"><i class="fas fa-chart-bar"></i></span>
+                    <div class="action-desc">
+                      <h5>Attendance Tracker</h5>
+                      <p>Bunk margins, recovery calculations, and what-if simulator.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                  <button id="action-find-course" class="action-btn">
+                    <span class="action-icon icon-btn-blue"><i class="fas fa-search"></i></span>
+                    <div class="action-desc">
+                      <h5>Course Finder & Syllabus</h5>
+                      <p>Search B.Tech subjects, credits, and prerequisites.</p>
+                    </div>
+                    <i class="fas fa-chevron-right chevron"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- College Circulars & Bulletins -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-bullhorn text-pink"></i> College Bulletins & Notices</h4>
+                </div>
+                <div id="dashboard-notices-container" class="notices-list">
+                  <!-- Rendered dynamically by app.js -->
+                </div>
+              </div>
+
+              <!-- Recent Questions & Logs -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-history text-purple"></i> Recent Questions & Logs</h4>
+                </div>
+                <div id="dashboard-recent-activities" class="recent-activities-list">
+                  <!-- Loaded dynamically from localStorage -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Chatbot Assistant -->
+        <section id="chatbot-tab" class="tab-content-panel">
+          <div class="chatbot-wrapper">
+            <!-- Chat Header Console -->
+            <div class="chat-console-header">
+              <div class="bot-info-block">
+                <span class="bot-avatar-large">🤖</span>
+                <div>
+                  <h4>AcadAI Assistant</h4>
+                  <span class="badge-status-online"><span class="dot"></span> Online (Similarity Engine)</span>
+                </div>
+              </div>
+              <div class="chat-controls">
+                <button id="chat-clear-btn" class="btn btn-secondary btn-small" title="Clear chat history">
+                  <i class="fas fa-trash-alt"></i> Clear Chat
+                </button>
+              </div>
+            </div>
+
+            <!-- Chat Message Area -->
+            <div id="chat-body" class="chat-body-container">
+              <!-- Message bubbles injected dynamically -->
+            </div>
+
+            <!-- Chat Suggestions -->
+            <div class="chat-suggestions-container">
+              <span class="suggestions-label">Suggested Queries:</span>
+              <div class="prompt-chips-wrapper">
+                <button class="prompt-chip" data-query="What is my attendance?">My Attendance</button>
+                <button class="prompt-chip" data-query="Which subjects have low attendance?">Low Attendance</button>
+                <button class="prompt-chip" data-query="Show my timetable">Class Timetable</button>
+                <button class="prompt-chip" data-query="What are the B.Tech eligibility criteria?">Eligibility</button>
+                <button class="prompt-chip" data-query="What is the annual tuition fee?">Tuition Fees</button>
+                <button class="prompt-chip" data-query="What are the library timings?">Library Rules</button>
+                <button class="prompt-chip" data-query="Tell me about hostel facilities and curfew.">Hostel Info</button>
+                <button class="prompt-chip" data-query="What are the recent placement records?">Placements</button>
+                <button class="prompt-chip" data-query="How to contact the college office?">Contact Helpdesk</button>
+              </div>
+            </div>
+
+            <!-- Chat Input Toolbar -->
+            <div class="chat-input-toolbar">
+              <button id="chat-mic-btn" class="btn btn-icon-only mic-btn" title="Voice Input (Speech-to-Text)">
+                <i class="fas fa-microphone"></i>
+              </button>
+              <textarea id="chat-input" placeholder="Ask AcadAI a question (e.g., 'What are the fees?', 'Show my timetable', 'Where is the library?')..." rows="1"></textarea>
+              <button id="chat-send-btn" class="btn btn-primary send-btn" title="Send message (Enter)">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Course Finder -->
+        <section id="courses-tab" class="tab-content-panel">
+          <div class="tab-controls-card">
+            <!-- Search & Primary Filter row -->
+            <div class="filters-row-primary">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="course-search" placeholder="Search by course code, subject name, description, or prerequisites...">
+              </div>
+              <div class="sort-selector-wrapper">
+                <label for="course-sort">Sort by:</label>
+                <select id="course-sort">
+                  <option value="code-asc">Course Code (A-Z)</option>
+                  <option value="code-desc">Course Code (Z-A)</option>
+                  <option value="name-asc">Subject Name (A-Z)</option>
+                  <option value="credits-desc">Credits (Highest)</option>
+                  <option value="sem-asc">Semester (Ascending)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Dropdown filter inputs -->
+            <div class="filters-grid">
+              <div class="filter-col">
+                <label for="filter-dept">Department</label>
+                <select id="filter-dept">
+                  <option value="all">All Departments</option>
+                  <option value="CSE">Computer Science (CSE)</option>
+                  <option value="IT">Information Technology (IT)</option>
+                  <option value="ECE">Electronics (ECE)</option>
+                  <option value="EEE">Electrical (EEE)</option>
+                  <option value="ME">Mechanical (ME)</option>
+                  <option value="CE">Civil (CE)</option>
+                </select>
+              </div>
+              <div class="filter-col">
+                <label for="filter-sem">Semester</label>
+                <select id="filter-sem">
+                  <option value="all">All Semesters</option>
+                  <option value="1">Semester 1</option>
+                  <option value="2">Semester 2</option>
+                  <option value="3">Semester 3</option>
+                  <option value="4">Semester 4</option>
+                  <option value="5">Semester 5</option>
+                  <option value="6">Semester 6</option>
+                  <option value="7">Semester 7</option>
+                  <option value="8">Semester 8</option>
+                </select>
+              </div>
+              <div class="filter-col">
+                <label for="filter-credits">Credits</label>
+                <select id="filter-credits">
+                  <option value="all">Any Credits</option>
+                  <option value="1">1 Credit</option>
+                  <option value="3">3 Credits</option>
+                  <option value="4">4 Credits</option>
+                </select>
+              </div>
+              <div class="filter-col">
+                <label for="filter-type">Course Type</label>
+                <select id="filter-type">
+                  <option value="all">Any Type</option>
+                  <option value="Core">Core Subject</option>
+                  <option value="Elective">Elective Subject</option>
+                  <option value="Lab">Practical Lab</option>
+                </select>
+              </div>
+              <div class="filter-action-col">
+                <button id="reset-course-filters" class="btn btn-secondary btn-full"><i class="fas fa-undo"></i> Reset Filters</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Courses Grid Output -->
+          <div id="courses-grid" class="courses-grid-container">
+            <!-- Populated dynamically by courses.js -->
+          </div>
+
+          <!-- Course Detail Modal -->
+          <div id="course-modal" class="modal-overlay">
+            <div class="modal-card">
+              <button class="btn btn-icon-only close-modal" aria-label="Close details modal"><i class="fas fa-times"></i></button>
+              <div class="modal-body-content">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Admission Calculator -->
+        <section id="admission-tab" class="tab-content-panel">
+          <div class="calculator-layout-grid">
+            <!-- Form Block -->
+            <div class="dashboard-panel-card">
+              <div class="panel-card-header">
+                <h4><i class="fas fa-graduation-cap text-indigo"></i> Admission Cutoff Eligibility Simulator</h4>
+              </div>
+              <form id="admission-calc-form" class="admission-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="board-percent">12th Board PCM Percentage (%)</label>
+                    <input type="number" id="board-percent" min="0" max="100" step="0.1" placeholder="e.g. 78.5" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="jee-percentile">JEE Main Percentile Score</label>
+                    <input type="number" id="jee-percentile" min="0" max="100" step="0.001" placeholder="e.g. 91.45" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="student-category">Category</label>
+                    <select id="student-category">
+                      <option value="GEN">General (Open Category)</option>
+                      <option value="OBC">OBC (Other Backward Classes)</option>
+                      <option value="SC">SC (Scheduled Castes)</option>
+                      <option value="ST">ST (Scheduled Tribes)</option>
+                      <option value="EWS">EWS (Economically Weaker Section)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="student-domicile">Domicile Quota</label>
+                    <select id="student-domicile">
+                      <option value="home">Home State Candidate (85% Quota)</option>
+                      <option value="other">All India / Other State (15% Quota)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="desired-branch">Desired Engineering Branch</label>
+                    <select id="desired-branch">
+                      <option value="CSE">Computer Science & Engineering (CSE)</option>
+                      <option value="IT">Information Technology (IT)</option>
+                      <option value="ECE">Electronics & Communication (ECE)</option>
+                      <option value="EEE">Electrical & Electronics (EEE)</option>
+                      <option value="ME">Mechanical Engineering (ME)</option>
+                      <option value="CE">Civil Engineering (CE)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="admission-year">Academic Session</label>
+                    <select id="admission-year" disabled>
+                      <option value="2026">2026 - 2027</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-calculator"></i> Simulate Cutoff Eligibility</button>
+              </form>
+            </div>
+
+            <!-- Result Block -->
+            <div id="calc-results" class="calc-results-wrapper">
+              <div class="empty-calc-state">
+                <i class="fas fa-user-graduate"></i>
+                <h4>Input your 12th Board percentage and JEE percentile to simulate admission eligibility outcomes.</h4>
+                <p>Calculations use past cutoffs and state reservation criteria.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Class Timetable -->
+        <section id="timetable-tab" class="tab-content-panel">
+          <div class="tab-controls-card">
+            <div class="filters-grid select-filters-row">
+              <div class="filter-col">
+                <label for="timetable-branch">Branch / Department</label>
+                <select id="timetable-branch">
+                  <option value="CSE">Computer Science & Engineering (CSE)</option>
+                  <option value="IT">Information Technology (IT)</option>
+                  <option value="ECE">Electronics & Communication (ECE)</option>
+                  <option value="EEE">Electrical & Electronics (EEE)</option>
+                  <option value="ME">Mechanical Engineering (ME)</option>
+                  <option value="CE">Civil Engineering (CE)</option>
+                </select>
+              </div>
+              <div class="filter-col">
+                <label for="timetable-semester">Academic Semester</label>
+                <select id="timetable-semester">
+                  <option value="1">Semester 1 (1st Year)</option>
+                  <option value="2">Semester 2 (1st Year)</option>
+                  <option value="3">Semester 3 (2nd Year)</option>
+                  <option value="4">Semester 4 (2nd Year)</option>
+                  <option value="5">Semester 5 (3rd Year)</option>
+                  <option value="6">Semester 6 (3rd Year)</option>
+                  <option value="7">Semester 7 (4th Year)</option>
+                  <option value="8">Semester 8 (4th Year)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule Output Wrapper -->
+          <div class="timetable-grid-card dashboard-panel-card">
+            <div id="timetable-grid-wrapper" class="timetable-wrapper-panel">
+              <!-- Rendered dynamically by timetable.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Attendance Tracker -->
+        <section id="attendance-tab" class="tab-content-panel">
+          <div class="tab-controls-card attendance-controls-header-card">
+            <div class="attendance-header-actions" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
+              <div class="header-left-desc">
+                <h4><i class="fas fa-chart-pie text-indigo"></i> Subject-wise Attendance Tracker</h4>
+                <p>Log lectures, calculate safe bunk margins, recovery classes, and what-if predictions.</p>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <div class="attendance-target-wrapper">
+                  <label for="attendance-target-select" style="font-size:0.85rem; font-weight:600; color:var(--text-secondary);">Target Threshold:</label>
+                  <select id="attendance-target-select" class="attendance-target-select">
+                    <option value="75">75% (Mandatory University Rule)</option>
+                    <option value="80">80% (Placement Safe Zone)</option>
+                    <option value="85">85% (Distinction Standard)</option>
+                    <option value="90">90% (Scholarship Tier)</option>
+                  </select>
+                </div>
+                <button id="add-subject-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Course</button>
+                <button id="reset-attendance-btn" class="btn btn-danger-outline"><i class="fas fa-redo"></i> Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject Cards grid -->
+          <div id="attendance-subjects-list" class="attendance-list-grid">
+            <!-- Rendered dynamically by attendance.js -->
+          </div>
+        </section>
+
+        <!-- Tab: Campus Map -->
+        <section id="map-tab" class="tab-content-panel">
+          <div class="tab-controls-card" style="margin-bottom:16px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="map-search-input" placeholder="Search buildings, departments, labs, amenities, or facilities...">
+              </div>
+              <div class="map-category-pills">
+                <button class="map-pill active map-cat-pill" data-cat="all">All Buildings</button>
+                <button class="map-pill map-cat-pill" data-cat="academic">Academic & Labs</button>
+                <button class="map-pill map-cat-pill" data-cat="admin">Administration</button>
+                <button class="map-pill map-cat-pill" data-cat="hostel">Hostels</button>
+                <button class="map-pill map-cat-pill" data-cat="sports">Sports Arena</button>
+                <button class="map-pill map-cat-pill" data-cat="amenity">SAC & Cafeteria</button>
+              </div>
+              <div id="map-quick-building-pills" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+            </div>
+          </div>
+
+          <div class="map-layout-grid">
+            <!-- SVG Map Panel -->
+            <div class="dashboard-panel-card map-card">
+              <div class="panel-card-header">
+                <h4><i class="fas fa-map-marked-alt text-indigo"></i> Campus Blueprint (Click buildings to view details)</h4>
+              </div>
+              <div id="campus-map-svg-container" class="map-svg-container">
+                <svg viewBox="0 0 800 500" class="campus-svg">
+                  <defs>
+                    <linearGradient id="gradient-grass" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#14321a" />
+                      <stop offset="100%" stop-color="#1a4223" />
+                    </linearGradient>
+                    <linearGradient id="gradient-road" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#2a2f35" />
+                      <stop offset="100%" stop-color="#343a40" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Background Grass Area -->
+                  <rect width="800" height="500" rx="16" fill="url(#gradient-grass)" />
+
+                  <!-- Roads Grid -->
+                  <rect x="360" y="0" width="80" height="500" fill="url(#gradient-road)" opacity="0.8" />
+                  <rect x="0" y="220" width="800" height="60" fill="url(#gradient-road)" opacity="0.8" />
+                  <rect x="580" y="280" width="60" height="220" fill="url(#gradient-road)" opacity="0.8" />
+
+                  <!-- Main Gate (Gola Ka Mandir) -->
+                  <g id="map-gate" class="map-building" cursor="pointer">
+                    <rect x="340" y="460" width="120" height="40" rx="4" class="svg-building-base" />
+                    <text x="400" y="485" text-anchor="middle" class="svg-building-label">MAIN GATE / SBI</text>
+                  </g>
+
+                  <!-- Scindia Administration Block -->
+                  <g id="map-admin" class="map-building" cursor="pointer">
+                    <rect x="180" y="320" width="140" height="90" rx="8" class="svg-building-base block-admin" />
+                    <rect x="190" y="330" width="120" height="30" rx="4" class="svg-building-accent" />
+                    <text x="250" y="380" text-anchor="middle" class="svg-building-label">SCINDIA ADMIN</text>
+                  </g>
+
+                  <!-- Central Academic Block -->
+                  <g id="map-academic" class="map-building" cursor="pointer">
+                    <rect x="40" y="70" width="220" height="110" rx="8" class="svg-building-base block-academic" />
+                    <rect x="50" y="80" width="200" height="30" rx="4" class="svg-building-accent" />
+                    <text x="150" y="145" text-anchor="middle" class="svg-building-label">ACADEMIC BLOCK</text>
+                  </g>
+
+                  <!-- Central Library -->
+                  <g id="map-library" class="map-building" cursor="pointer">
+                    <rect x="480" y="80" width="130" height="100" rx="8" class="svg-building-base block-library" />
+                    <circle cx="545" cy="130" r="25" class="svg-building-accent" />
+                    <text x="545" y="145" text-anchor="middle" class="svg-building-label">CENTRAL LIBRARY</text>
+                  </g>
+
+                  <!-- Department of IT & CSE Complex -->
+                  <g id="map-cs" class="map-building" cursor="pointer">
+                    <rect x="640" y="70" width="130" height="120" rx="8" class="svg-building-base block-cs" />
+                    <rect x="655" y="85" width="100" height="20" rx="4" class="svg-building-accent" />
+                    <text x="705" y="140" text-anchor="middle" class="svg-building-label">IT & CSE COMPLEX</text>
+                  </g>
+
+                  <!-- Central Computer Centre & Workshops -->
+                  <g id="map-labs" class="map-building" cursor="pointer">
+                    <rect x="40" y="320" width="110" height="80" rx="8" class="svg-building-base block-labs" />
+                    <text x="95" y="365" text-anchor="middle" class="svg-building-label">CCC & WORKSHOPS</text>
+                  </g>
+
+                  <!-- Student Activity Center & Dispensary -->
+                  <g id="map-student" class="map-building" cursor="pointer">
+                    <rect x="480" y="320" width="120" height="80" rx="8" class="svg-building-base block-student" />
+                    <text x="540" y="365" text-anchor="middle" class="svg-building-label">STUDENT & CLINIC</text>
+                  </g>
+
+                  <!-- Hostel Complex -->
+                  <g id="map-hostel" class="map-building" cursor="pointer">
+                    <rect x="660" y="300" width="110" height="110" rx="8" class="svg-building-base block-hostel" />
+                    <text x="715" y="360" text-anchor="middle" class="svg-building-label">MITS HOSTELS</text>
+                  </g>
+
+                  <!-- Central Cafeteria -->
+                  <g id="map-cafeteria" class="map-building" cursor="pointer">
+                    <rect x="290" y="110" width="70" height="60" rx="8" class="svg-building-base block-cafe" />
+                    <text x="325" y="145" text-anchor="middle" class="svg-building-label">CANTEEN</text>
+                  </g>
+
+                  <!-- Sports Complex -->
+                  <g id="map-sports" class="map-building" cursor="pointer">
+                    <rect x="640" y="430" width="140" height="60" rx="30" fill="none" stroke="#e09090" stroke-width="6" opacity="0.3" />
+                    <rect x="650" y="440" width="120" height="40" rx="20" class="svg-building-base block-sports" />
+                    <text x="710" y="465" text-anchor="middle" class="svg-building-label">SPORTS TURF</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Details Sidebar Panel -->
+            <div id="map-details-panel" class="map-info-panel-wrapper">
+              <!-- Loaded dynamically from map.js selection -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Academic Calendar -->
+        <section id="calendar-tab" class="tab-content-panel">
+          <div class="tab-controls-card">
+            <!-- Search & Filters -->
+            <div class="calendar-controls-row">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="calendar-search" placeholder="Search calendar events by title or keyword...">
+              </div>
+              <div class="calendar-filters">
+                <button class="btn calendar-filter-btn active" data-category="all">All Events</button>
+                <button class="btn calendar-filter-btn" data-category="Academic">Academic</button>
+                <button class="btn calendar-filter-btn" data-category="Examination">Exams</button>
+                <button class="btn calendar-filter-btn" data-category="Holiday">Holidays</button>
+                <button class="btn calendar-filter-btn" data-category="Event">Events</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Calendar Timeline -->
+          <div class="calendar-timeline-wrapper">
+            <div id="calendar-timeline" class="timeline">
+              <!-- Rendered dynamically by calendar.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: College Facilities -->
+        <section id="facilities-tab" class="tab-content-panel">
+          <div class="tab-controls-card" style="margin-bottom:20px;">
+            <div class="search-input-wrapper">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" id="facility-search-input" placeholder="Search campus facilities, labs, libraries, sports, transport...">
+            </div>
+          </div>
+          <div class="facilities-grid-container" id="facilities-grid">
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-book-reader"></i></div>
+              <h3>MITS Central Library & Digital Hub</h3>
+              <p>Over 1,00,000+ physical volumes, subscribed IEEE Xplore & ScienceDirect consortium access, digital reference center, and silent study zones open 8 AM to 8 PM.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 8:00 AM – 8:00 PM</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3>Central Computer Centre (CCC)</h3>
+              <p>150+ high-end workstations with gigabit fiber-optic campus intranet, licensed MATLAB, AutoCAD, Oracle, and open-source Linux software development suites.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 8:30 AM – 5:30 PM</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-utensils"></i></div>
+              <h3>Campus Canteen & Nescafe Point</h3>
+              <p>Hygienic multi-cuisine student cafeteria providing freshly prepared meals, snacks, fruit juices, and an adjacent Nescafe coffee hub with open garden seating.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 7:30 AM – 8:30 PM</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-running"></i></div>
+              <h3>Sports Arena & Turf Ground</h3>
+              <p>Main cricket ground, athletic track, volleyball courts, synthetic basketball court, indoor badminton hall, and well-equipped student gymnasium.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 6 AM–9 AM, 5 PM–8:30 PM</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-clinic-medical"></i></div>
+              <h3>Health Dispensary & Emergency Care</h3>
+              <p>On-campus dispensary with resident medical officer, first-aid support, routine diagnostic monitoring, and an emergency vehicle service.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 24x7 Available</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-bed"></i></div>
+              <h3>MITS Hostels (Boys 1-4 & Girls Hostel)</h3>
+              <p>Secure residential blocks with Wi-Fi, dining mess, common room with TV, 24/7 security, and 9:30 PM curfew monitored via biometric check.</p>
+              <span class="facility-tag"><i class="fas fa-shield-alt"></i> Biometric Security</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-microchip"></i></div>
+              <h3>Department of IT & CSE Laboratories</h3>
+              <p>Advanced Software Engineering Lab, IoT & Embedded Systems Lab (headed by Dr. Sanjiv Sharma), and AI/Data Science research clusters.</p>
+              <span class="facility-tag"><i class="fas fa-wifi"></i> Gigabit Fiber</span>
+            </div>
+
+            <div class="facility-card">
+              <div class="facility-icon"><i class="fas fa-money-check-alt"></i></div>
+              <h3>State Bank of India (SBI) Branch & 24/7 ATM</h3>
+              <p>Full-fledged on-campus SBI branch with 24/7 ATM kiosk situated at the Main Gate (Race Course Road) for convenient student banking and fee transactions.</p>
+              <span class="facility-tag"><i class="fas fa-clock"></i> 24 Hours ATM</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Frequently Asked Questions (FAQ) -->
+        <section id="faq-tab" class="tab-content-panel">
+          <div class="faq-container">
+            <div class="faq-header-card">
+              <h3>Frequently Asked Questions</h3>
+              <p>Quick answers to common questions about admissions, exams, hostel, and college life.</p>
+              <div class="search-input-wrapper" style="max-width:460px; margin:16px auto 0;">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="faq-search-input" placeholder="Search FAQ questions or topics...">
+              </div>
+            </div>
+
+            <div class="faq-accordion" id="faq-accordion-list">
+              <details class="faq-item" open>
+                <summary><i class="fas fa-question-circle"></i> What is the minimum attendance requirement for MITS semester exams?</summary>
+                <div class="faq-answer">
+                  <p>A minimum of <strong>75% attendance</strong> is mandatory in each registered course under MITS Autonomous Academic Regulations. Attendance shortage up to 10% (between 65% and 74.9%) can be condoned solely by the <strong>Director</strong> on valid medical hospitalization grounds or certified state/national event representation. Below 65% results in strict detention.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="What is the attendance rule in MITS?"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary><i class="fas fa-question-circle"></i> How does B.Tech admission counseling work at MITS Gwalior?</summary>
+                <div class="faq-answer">
+                  <p>Admissions are conducted through <strong>MP DTE Online Counseling</strong> (dte.mponline.gov.in) based on <strong>JEE Main All India CRL Rank</strong>. 90% seats are reserved for MP State Domicile candidates, 10% for All India Quota, and 5% supernumerary seats under Tuition Fee Waiver (TFW). Vacant seats after centralized rounds are filled via on-campus <strong>College Level Counseling (CLC)</strong>.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="How to get admission in MITS Gwalior?"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary><i class="fas fa-question-circle"></i> What are the hostel curfew timings and facilities at MITS?</summary>
+                <div class="faq-answer">
+                  <p>MITS has 4 on-campus Boys Hostels (No. 1, 2, 3, 4) and a dedicated Girls Hostel complex. The campus curfew time is strictly <strong>9:30 PM</strong>, monitored through biometric scanning. The complex includes student dining mess, 24/7 security, high-speed Wi-Fi, and recreation rooms.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="Tell me about MITS hostel facilities and fees"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary><i class="fas fa-question-circle"></i> What is the examination evaluation and grading system at MITS?</summary>
+                <div class="faq-answer">
+                  <p>MITS adopts the <strong>10-Point Absolute Grading Scale</strong> (O=10, A+=9, A=8, B+=7, B=6, C=5, P=4, F=0). Evaluation is divided into <strong>30% Continuous Internal Assessment</strong> (2 Mid-Sem Tests + Quizzes/Assignments) and <strong>70% End-Semester Autonomous Examination</strong>.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="Explain MITS grading system and SGPA formula"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary><i class="fas fa-question-circle"></i> What are the library timings and digital resource access?</summary>
+                <div class="faq-answer">
+                  <p>The Central Library operates from <strong>8:00 AM to 8:00 PM</strong> on all academic working days. It houses 1,00,000+ print volumes, with institutional subscriptions to IEEE Xplore, ScienceDirect, and DELNET digital journals.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="Tell me about MITS central library"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary><i class="fas fa-question-circle"></i> How can I contact the IT Department or college authorities?</summary>
+                <div class="faq-answer">
+                  <p>The Department of Information Technology is headed by <strong>Dr. Punit Kumar Johari</strong> (HOD) in the IT & CSE Complex. General college contact: 0751-2409300 / director@mitsgwalior.in. Address: Race Course Road, Gola Ka Mandir, Gwalior – 474005.</p>
+                  <button class="btn btn-secondary btn-small ask-faq-in-chat" style="margin-top:10px;" data-query="Who is HOD of IT Department?"><i class="fas fa-comments"></i> Ask in AcadAI Chat</button>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Knowledge Base Manager -->
+        <section id="kb-tab" class="tab-content-panel">
+          <div class="tab-controls-card kb-admin-controls-card">
+            <div class="kb-admin-search-row">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="kb-admin-search" placeholder="Search knowledge base questions or answers...">
+              </div>
+              <button id="add-kb-entry-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Q&A</button>
+            </div>
+          </div>
+
+          <!-- KB Records Card List -->
+          <div id="kb-admin-list" class="kb-admin-records-container">
+            <!-- Injected dynamically by app.js -->
+          </div>
+
+          <!-- Add / Edit Modal -->
+          <div id="kb-modal" class="modal-overlay">
+            <div class="modal-card">
+              <button class="btn btn-icon-only close-modal" aria-label="Close edit modal"><i class="fas fa-times"></i></button>
+              <h3 id="kb-modal-title">Add Q&A Entry</h3>
+              
+              <form id="kb-entry-form" class="modal-form">
+                <div class="form-group">
+                  <label for="kb-form-category">Category / Topic</label>
+                  <select id="kb-form-category" required>
+                    <option value="admissions">Admissions</option>
+                    <option value="courses">Courses & Syllabus</option>
+                    <option value="fees">Fees & Scholarships</option>
+                    <option value="timetable">Class Timetables</option>
+                    <option value="attendance">Attendance & Rules</option>
+                    <option value="examinations">Examinations & Grading</option>
+                    <option value="academic_calendar">Academic Calendar</option>
+                    <option value="facilities">Campus Facilities</option>
+                    <option value="library">Library Rules</option>
+                    <option value="hostel">Hostel & Mess</option>
+                    <option value="labs">Laboratories</option>
+                    <option value="placements">Placements & Careers</option>
+                    <option value="faculty">Faculty & Mentors</option>
+                    <option value="events">Events & Festivals</option>
+                    <option value="contact_information">Contact & Location</option>
+                    <option value="general_greeting">General Greetings</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="kb-form-questions">User Question Variations (One question per line)</label>
+                  <textarea id="kb-form-questions" rows="4" placeholder="e.g.&#10;What are the library hours?&#10;library timings&#10;when does the library open" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="kb-form-answer">Bot Response (HTML Supported)</label>
+                  <textarea id="kb-form-answer" rows="5" placeholder="e.g. The central library is open from <strong>8:00 AM to 8:00 PM</strong> on all working days." required></textarea>
+                </div>
+
+                <div class="modal-action-row">
+                  <button type="button" id="kb-cancel-btn" class="btn btn-secondary">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Save Q&A Entry</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Settings -->
+        <section id="settings-tab" class="tab-content-panel">
+          <div class="settings-grid">
+            
+            <!-- Preferences card -->
+            <div class="dashboard-panel-card">
+              <div class="panel-card-header">
+                <h4><i class="fas fa-sliders-h text-indigo"></i> General Preferences</h4>
+              </div>
+              <div class="settings-body">
+                <div class="settings-row-item">
+                  <div class="settings-label-block">
+                    <h5>Sound Notifications</h5>
+                    <p>Play a gentle tone when AcadAI generates a response.</p>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" id="settings-sound-toggle">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+
+                <div class="settings-row-item">
+                  <div class="settings-label-block">
+                    <h5>Auto Read Aloud (Text-to-Speech)</h5>
+                    <p>Automatically speak chatbot answers using browser speech synthesis.</p>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" id="settings-speech-toggle">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+
+                <div class="settings-sliders-block">
+                  <div class="slider-group">
+                    <label for="settings-speech-rate">Voice Reading Speed</label>
+                    <input type="range" id="settings-speech-rate" min="0.5" max="2.0" step="0.1" value="1.0">
+                  </div>
+                  <div class="slider-group">
+                    <label for="settings-speech-pitch">Voice Pitch</label>
+                    <input type="range" id="settings-speech-pitch" min="0.5" max="2.0" step="0.1" value="1.0">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Maintenance & Reset Zone Card -->
+            <div class="dashboard-panel-card card-danger-zone">
+              <div class="panel-card-header">
+                <h4><i class="fas fa-tools text-danger"></i> Data Maintenance & Storage</h4>
+              </div>
+              <div class="settings-body danger-zone-body">
+                <div class="danger-action-row">
+                  <div class="danger-label">
+                    <h5>Clear Chat Conversation History</h5>
+                    <p>Purge stored messages from localStorage and refresh chat.</p>
+                  </div>
+                  <button id="settings-clear-history" class="btn btn-danger-outline"><i class="fas fa-trash"></i> Clear History</button>
+                </div>
+                
+                <div class="danger-action-row">
+                  <div class="danger-label">
+                    <h5>Reset Custom Knowledge Base</h5>
+                    <p>Remove user-added Q&As and restore default college data.</p>
+                  </div>
+                  <button id="settings-reset-kb" class="btn btn-danger-outline"><i class="fas fa-trash-restore"></i> Reset Knowledge Base</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-footer-actions">
+            <button id="save-settings-btn" class="btn btn-primary"><i class="fas fa-save"></i> Save Settings</button>
+          </div>
+        </section>
+
+        <!-- Tab: Academic Planner -->
+        <section id="planner-tab" class="tab-content-panel">
+          <div class="planner-controls-bar">
+            <div id="planner-filter-pills" class="planner-filter-pills">
+              <button class="filter-pill-btn active" data-filter="all">All Tasks</button>
+              <button class="filter-pill-btn" data-filter="pending">Pending Deadlines</button>
+              <button class="filter-pill-btn" data-filter="completed">Completed</button>
+              <button class="filter-pill-btn" data-filter="high">High Priority</button>
+            </div>
+            <button id="add-task-btn" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Add New Task</button>
+          </div>
+
+          <div class="planner-grid-layout">
+            <!-- Left: Task Cards List -->
+            <div>
+              <div id="planner-tasks-list" class="tasks-container-list">
+                <!-- Rendered dynamically by planner.js -->
+              </div>
+            </div>
+
+            <!-- Right: Stats & Exam Countdowns -->
+            <div class="exam-countdowns-panel">
+              <!-- Task Metrics Card -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-chart-pie text-indigo"></i> Task Progress</h4>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; text-align:center; padding:12px 0;">
+                  <div>
+                    <h3 id="planner-stat-pending" style="font-size:1.6rem; color:var(--accent-blue);">0</h3>
+                    <span style="font-size:0.75rem; color:var(--text-secondary);">Pending</span>
+                  </div>
+                  <div>
+                    <h3 id="planner-stat-high" style="font-size:1.6rem; color:#ef4444;">0</h3>
+                    <span style="font-size:0.75rem; color:var(--text-secondary);">High Priority</span>
+                  </div>
+                  <div>
+                    <h3 id="planner-stat-completed" style="font-size:1.6rem; color:var(--accent-green);">0</h3>
+                    <span style="font-size:0.75rem; color:var(--text-secondary);">Done</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Exam Countdown Cards -->
+              <div class="countdown-hero-card">
+                <span class="facility-tag"><i class="fas fa-hourglass-half"></i> Sessional Exams</span>
+                <div id="countdown-midsem" class="countdown-number">18</div>
+                <div class="countdown-sub">Days until Mid-Semester Theory Exams</div>
+              </div>
+
+              <div class="countdown-hero-card" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.1));">
+                <span class="facility-tag"><i class="fas fa-flask"></i> Practical Evaluations</span>
+                <div id="countdown-lab" class="countdown-number" style="color:var(--accent-pink);">32</div>
+                <div class="countdown-sub">Days until Lab Practicals & Viva Voce</div>
+              </div>
+
+              <div class="countdown-hero-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.1));">
+                <span class="facility-tag"><i class="fas fa-graduation-cap"></i> University Finals</span>
+                <div id="countdown-endsem" class="countdown-number" style="color:var(--accent-green);">48</div>
+                <div class="countdown-sub">Days until End-Semester University Finals</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Academic Copilot -->
+        <section id="copilot-tab" class="tab-content-panel">
+          <div class="copilot-layout-grid">
+            <!-- Left: Goal Form & Generator -->
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-brain text-purple"></i> AI Study Plan Generator</h4>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:18px;">
+                  Generate a structured, milestone-driven daily study roadmap tailored to your specific subject, exam timeline, and available hours.
+                </p>
+
+                <form id="copilot-plan-form" style="display:flex; flex-direction:column; gap:14px;">
+                  <div class="form-group">
+                    <label for="copilot-subject-select">Target Course / Subject</label>
+                    <select id="copilot-subject-select" required>
+                      <!-- Populated dynamically from courses.js -->
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="copilot-goal-select">Study Goal</label>
+                    <select id="copilot-goal-select">
+                      <option value="Mid-Term Sessional Exam Prep">Mid-Term Sessional Exam Prep</option>
+                      <option value="End-Semester University Finals">End-Semester University Finals</option>
+                      <option value="Placement Technical Interview Prep">Placement Technical Interview Prep</option>
+                      <option value="Backlog / Remedial Exam Clearance">Backlog / Remedial Exam Clearance</option>
+                      <option value="Comprehensive Unit Mastery">Comprehensive Unit Mastery</option>
+                    </select>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="copilot-days-input">Days Remaining</label>
+                      <input type="number" id="copilot-days-input" min="2" max="60" value="7" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="copilot-hours-input">Study Hours / Day</label>
+                      <input type="number" id="copilot-hours-input" min="1" max="10" step="0.5" value="3" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="copilot-focus-select">Preparation Strategy</label>
+                    <select id="copilot-focus-select">
+                      <option value="balanced">Balanced (Theory + 3-5 Standard Numericals)</option>
+                      <option value="deep">Deep Dive (Algorithms + Mathematical Proofs)</option>
+                      <option value="cram">High-Yield Sprint (Previous Year Papers + Formulas)</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" style="margin-top:6px;">
+                    <i class="fas fa-magic"></i> Generate Personalized Study Plan
+                  </button>
+                </form>
+              </div>
+
+              <!-- Saved Study Roadmaps -->
+              <div class="dashboard-panel-card">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-bookmark text-indigo"></i> Saved Study Plans</h4>
+                </div>
+                <div id="copilot-saved-plans">
+                  <!-- Rendered dynamically by copilot.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Generated Study Timeline -->
+            <div>
+              <div id="copilot-plan-output">
+                <div style="text-align:center; padding:60px 30px; background:var(--bg-secondary); border-radius:16px; border:1px dashed var(--border-color);">
+                  <i class="fas fa-route" style="font-size:3rem; color:var(--text-muted); margin-bottom:14px; display:block;"></i>
+                  <h4 style="font-size:1.15rem; color:var(--text-primary); margin-bottom:6px;">No study plan generated yet</h4>
+                  <p style="font-size:0.85rem; color:var(--text-secondary); max-width:380px; margin:0 auto;">
+                    Select your target course, days remaining, and study goal on the left to produce a day-by-day revision schedule with direct export to your Academic Planner.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab: Explain My College -->
+        <section id="explain-tab" class="tab-content-panel">
+          <div class="tab-controls-card" style="margin-bottom:20px;">
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="explain-search-input" placeholder="Search rules, grading scale, condonation, backlogs, hostel curfew, placements...">
+              </div>
+              <div class="explain-category-bar">
+                <button class="map-pill active explain-cat-pill" data-cat="all">All Regulations</button>
+                <button class="map-pill explain-cat-pill" data-cat="academic">Grading & SGPA</button>
+                <button class="map-pill explain-cat-pill" data-cat="attendance">Attendance & Condonation</button>
+                <button class="map-pill explain-cat-pill" data-cat="exams">Backlogs & Detention</button>
+                <button class="map-pill explain-cat-pill" data-cat="placement">Placement Criteria</button>
+                <button class="map-pill explain-cat-pill" data-cat="campus">Hostel & Campus Life</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 2fr 1.2fr; gap:24px;">
+            <!-- Topics Content -->
+            <div>
+              <div id="explain-topics-container">
+                <!-- Rendered dynamically by explain.js -->
+              </div>
+            </div>
+
+            <!-- Side Interactive Tool: Target CGPA / SGPA Planner -->
+            <div>
+              <div class="dashboard-panel-card" style="position:sticky; top:20px;">
+                <div class="panel-card-header">
+                  <h4><i class="fas fa-calculator text-indigo"></i> Target SGPA Calculator</h4>
+                </div>
+                <p style="font-size:0.83rem; color:var(--text-secondary); margin-bottom:14px;">
+                  Compute the exact SGPA you need in the current semester to reach your target cumulative CGPA.
+                </p>
+
+                <div class="calculator-card-inline" style="display:flex; flex-direction:column; gap:12px; margin-top:0;">
+                  <div class="form-group">
+                    <label for="calc-curr-cgpa">Current Cumulative CGPA</label>
+                    <input type="number" step="0.01" min="0" max="10" id="calc-curr-cgpa" value="8.42">
+                  </div>
+                  <div class="form-group">
+                    <label for="calc-comp-credits">Total Credits Completed So Far</label>
+                    <input type="number" min="0" max="200" id="calc-comp-credits" value="80">
+                  </div>
+                  <div class="form-group">
+                    <label for="calc-target-cgpa">Target Cumulative CGPA</label>
+                    <input type="number" step="0.01" min="0" max="10" id="calc-target-cgpa" value="8.75">
+                  </div>
+                  <div class="form-group">
+                    <label for="calc-sem-credits">Credits in Current Semester</label>
+                    <input type="number" min="1" max="40" id="calc-sem-credits" value="20">
+                  </div>
+
+                  <button id="calc-target-sgpa-btn" class="btn btn-primary" style="margin-top:6px;">
+                    <i class="fas fa-calculator"></i> Calculate Required SGPA
+                  </button>
+
+                  <div id="calc-sgpa-result" style="margin-top:8px; font-size:0.85rem; line-height:1.5;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Data Libraries -->
+  <script src="data/knowledge-base.js"></script>
+  <script src="data/courses.js"></script>
+  <script src="data/calendar.js"></script>
+  
+  <!-- Interactive Controllers -->
+  <script src="js/chatbot.js"></script>
+  <script src="js/courses.js"></script>
+  <script src="js/admission.js"></script>
+  <script src="js/timetable.js"></script>
+  <script src="js/attendance.js"></script>
+  <script src="js/planner.js"></script>
+  <script src="js/copilot.js"></script>
+  <script src="js/explain.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/map.js"></script>
+  
+  <!-- Main Application Entry -->
+  <script src="js/app.js"></script>
+</body>
+</html>

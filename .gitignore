@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Scratch and automated test generation files
+scratch/
+word/
+
+# Local workspace backups & old archives
+backup_*/
+*.zip
+
+# OS and Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment & API keys
+.env
+.env.*

@@ -1,0 +1,16 @@
+{
+  "name": "conerstone-project",
+  "version": "1.0.0",
+  "description": "> **Design and Development of an AI-Powered Academic and College Information Assistant**   > *Customized with authentic, verified institutional data for **Madhav Institute of Technology & Science (MITS), Gwalior, Madhya Pradesh**.*   > Built with pure **HTML5, CSS3, and Vanilla JavaScript (ES6+)** — Zero external frameworks, zero paid backend dependencies, 100% offline-ready.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "docx": "^9.15.1"
+  }
+}
